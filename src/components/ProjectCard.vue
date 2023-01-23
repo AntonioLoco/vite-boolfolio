@@ -55,7 +55,11 @@ export default {
           <p class="card-text">
             {{ getCollapseText }}
           </p>
-          <a class="btn btn-primary" href="">Leggi</a>
+          <router-link
+            class="btn btn-primary"
+            :to="{ name: 'single-project', params: { slug: project.slug } }"
+            >Leggi</router-link
+          >
         </div>
       </div>
     </div>
