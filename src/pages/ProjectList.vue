@@ -34,17 +34,11 @@ export default {
         .get(this.apiUrl + "/api/projects", { params })
         .then((resp) => {
           const result = resp.data.response;
-          if (resp.data.success) {
-            this.projects = result.data;
-            this.currentPage = result.current_page;
-            this.lastPage = result.last_page;
-            this.totalElements = result.total;
-          } else {
-            this.projects = [];
-            this.currentPage = 1;
-            this.lastPage = 1;
-            this.totalElements = 0;
-          }
+          this.projects = result.data;
+          this.currentPage = result.current_page;
+          this.lastPage = result.last_page;
+          this.totalElements = result.total;
+          console.log(result);
           this.loading = false;
         })
         .catch((err) => {
